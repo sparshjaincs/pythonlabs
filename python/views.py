@@ -24,6 +24,9 @@ def homepage(request):
 		disc_forum = forum(email=email,title=title,post_text=text)
 		disc_forum.save()
 		context['data']='Data has been saved!!'
+		context['email']=email
+		context['title']=title
+		context['text']=text
 	return render(request,'python/homepage.html',context)
 def first(request):
 	return render(request,'users/first.html')
