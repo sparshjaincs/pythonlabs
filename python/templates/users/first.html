@@ -1,0 +1,110 @@
+{%load static%}
+{%include 'python/base.html'%}
+{%block styling%}
+<style>
+#block{
+	width:100%;
+	background-color:#4B30FE;
+	height:420px;
+	margin-top:-30px;
+}
+#block2{
+	width:100%;
+	background-color:#EAEEF4;
+	height:140px;
+	padding-top: 40px;
+	padding-left: 120px;
+	
+}
+.cont{
+	width:45%;
+	float:left;
+	margin:40px;
+}
+.cont1{
+font-size:50px;
+color:white;
+
+}
+.cont2{
+	color:white;
+	font-size:20px;
+	margin-left:80px;
+}
+.cont3{
+	color:#4B30FE;
+	font-size:30px;
+	border:none;
+	background-color:#EAEEF4;
+
+}
+.cont4{
+	width:500px;
+	background-color:#EAEEF4;
+	height:60px;
+	float:right;
+	margin-top:100px;
+	border-radius: 50px;
+	padding-left:20px;
+	padding-top:5px;
+	margin-right:30px;
+	
+
+}
+.colorr{
+	font-size:40px;
+	font-weight: 600;
+	color:#666981;
+	letter-spacing: 3px;
+	margin-left:100px;
+	padding-right: 30px;
+	padding-top: 40px;
+}
+.cre{
+	float:right;
+	margin-top:150px;
+	color:white;
+	font-size: 20px;
+}
+</style>
+{%endblock%}
+
+{%block js%} 
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+  {%endblock%}
+  <div class="container-fluid" id="block">
+  	<div class="cont">
+  		<span class="cont1">
+  		Programming Hub, a new way to learn programing</span>
+  		<span class="cont2">
+  		Interactive, simple & made for you</span><br>
+  		
+  	</div>
+
+  		<div class="cont4">
+  			<a href="{%url 'Login'%}"><button class="cont3">Click Here to see Discussion forum</button></a>
+  			
+  		</div>
+  		<div class="cre">
+  			Login Credentials<br>
+  			Username :Sparshjain<br>
+  			Password :Sparshj18@
+  		</div>
+  </div>
+
+  <div class="container-fluid" id="block2">
+  	<span class="colorr">
+  		Google
+  	</span>
+  <span class="colorr">
+  	Facebook
+  	</span>
+  <span class="colorr">
+  	Product Hunt
+  	</span>
+  
+
+  	
+  </div>

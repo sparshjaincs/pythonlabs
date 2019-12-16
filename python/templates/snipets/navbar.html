@@ -1,0 +1,102 @@
+{% load static%}
+{%block js%}
+  <script src="{% static 'python/js/bounce.js' %}"></script>
+  <script src="{% static 'python/js/bounce.min.js' %}"></script>
+  <script src="https://kit.fontawesome.com/yourcode.js"></script>
+
+
+{%endblock%}
+{%block styling%}
+<style>
+  #signup{
+    border:1px solid white;
+    padding:2px;
+    border-radius:20px;
+    width:150px;
+    height:40px;
+    padding-left: 40px;
+    padding-top: 2px;
+    color:white;
+    font-size: 20px;
+    transition: margin-top .3s;
+
+
+  }
+  #logo{
+    font-size:30px;
+    transition: margin-top .3s;
+  }
+  #logo:hover{
+    margin-top: -9px;
+  }
+  #signup:hover{
+    margin-top: -5px;
+  }
+  #courses,#about{
+    color:white;
+    font-size: 20px;
+    margin-right:40px;
+    transition: margin-top .3s;
+  }
+  #courses:hover{
+    margin-top: -4px;
+  }
+   #about:hover{
+    margin-top: -4px;
+  }
+  #navbar{
+    background-color: #5164FB;
+    height:70px;
+    
+  }
+</style>
+{%endblock%}
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+
+<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-#4B30FE mb-4">
+  <div class="container">
+    {% if user.is_authenticated %}
+
+    <span id ="logo" style="color:white;font-size:30px;cursor:pointer" onclick="openNav()">&#9776; PROGRAMMINGHUB</span>
+    
+
+    {% else %}
+    <a id="logo" style="color:white;" class="navbar-brand" href="{% url 'homepage' %}">PROGRAMMINGHUB</a>
+
+    {% endif %} 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      
+    
+      <ul class="navbar-nav order-lg-2">
+        {% if not user.is_authenticated %}
+        <a id="courses" class="nav-link" href="#">Courses</a>
+        <a id="about" class="nav-link" href="#">About</a>
+        <a id="signup" class="nav-link" href="{%url 'Login'%}">Sign Up</a>
+        {%else%}
+
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'homepage' %}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{user.username}}
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            
+           
+            <div class="dropdown-divider"></div>
+            <a id="signout" class="dropdown-item" href="{% url 'logout' %}">Sign out</a>
+            {% endif %}
+          </div>
+        </li>
+      </ul>
+      
+    </div>
+  </div>
+</nav>
