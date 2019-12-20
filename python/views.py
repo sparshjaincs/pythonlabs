@@ -12,6 +12,7 @@ class MyPasswordResetView(UserPassesTestMixin, PasswordResetView):
     # https://docs.djangoproject.com/en/2.2/ref/contrib/auth/#django.contrib.auth.models.User.is_anonymous
     def test_func(self):
         return self.request.user.is_anonymous
+'''
 @login_required()
 def homepage(request):
 	context={}
@@ -28,5 +29,11 @@ def homepage(request):
 		context['title']=title
 		context['text']=text
 	return render(request,'python/homepage.html',context)
+'''
 def first(request):
 	return render(request,'users/first.html')
+
+def homepage(request):
+	return render(request,'python/index.html')
+def buttons(request):
+	return render(request,'python/buttons.html')
